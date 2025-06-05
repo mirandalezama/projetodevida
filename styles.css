@@ -15,7 +15,6 @@ body {
     font-family: 'Chakra Petch', sans-serif;
 }
 
-
 .conteudo-principal {
     display: flex;
     flex-direction: column;
@@ -36,7 +35,6 @@ body {
     color: var(--verde);
 }
 
-
 .botao {
     font-family: 'Chakra Petch', sans-serif;
     background-color: var(--botao-inativo);
@@ -51,6 +49,7 @@ body {
     border-left: 2px solid var(--botao-ativo);
     border-right: 2px solid var(--botao-ativo);
     border-top: none;
+    cursor: pointer; /* Added for better UX */
 }
 
 .botao:first-child {
@@ -58,7 +57,7 @@ body {
 }
 
 .botoes {
-    display: block;
+    display: block; /* Stacks buttons vertically on smaller screens */
 }
 
 .botao.ativo {
@@ -66,18 +65,20 @@ body {
     border-bottom: 4px solid var(--verde);
 }
 
+/* This class now directly corresponds to the HTML container for tab content */
 .abas-textos {
     background-color: var(--texto-fundo);
     padding: 40px;
     border-radius: 0 0 40px 40px;
+    width: 100%; /* Ensure it takes full width */
 }
 
 .aba-conteudo.ativo {
-    display: block;
+    display: block; /* Shows the active tab content */
 }
 
 .aba-conteudo {
-    display: none;
+    display: none; /* Hides inactive tab content */
 }
 
 .aba-conteudo-titulo-principal {
@@ -92,13 +93,31 @@ body {
 }
 
 .contador {
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contador-digito {
+    padding: 0 16px;
     text-align: center;
+    min-width: 100px;
+}
+
+.contador-digito-numero {
+    font-size: 80px;
+    margin: 0;
+}
+
+.contador-digito-texto {
+    color: var(--verde);
+    font-size: 20px;
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
     .botoes {
-        display: flex;
+        display: flex; /* Makes buttons horizontal on larger screens */
     }
 
     .botao:first-child {
@@ -107,5 +126,13 @@ body {
 
     .botao:last-child {
         border-radius: 0 40px 0 0;
+    }
+
+    /* Adjusting layout for larger screens if needed */
+    .conteudo {
+        display: flex;
+        flex-direction: column; /* Stack buttons above content */
+        align-items: center;
+        width: 100%;
     }
 }
