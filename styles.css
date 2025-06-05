@@ -49,7 +49,8 @@ body {
     border-left: 2px solid var(--botao-ativo);
     border-right: 2px solid var(--botao-ativo);
     border-top: none;
-    cursor: pointer; /* Added for better UX */
+    cursor: pointer; /* Added for better UX indication */
+    
 }
 
 .botao:first-child {
@@ -57,7 +58,7 @@ body {
 }
 
 .botoes {
-    display: block; /* Stacks buttons vertically on smaller screens */
+    display: block;
 }
 
 .botao.ativo {
